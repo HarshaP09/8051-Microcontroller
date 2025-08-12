@@ -1,0 +1,110 @@
+C51 COMPILER V9.59.0.0   LEDBLINK                                                          08/11/2025 15:37:20 PAGE 1   
+
+
+C51 COMPILER V9.59.0.0, COMPILATION OF MODULE LEDBLINK
+OBJECT MODULE PLACED IN .\Objects\ledblink.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE ledblink.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\
+                    -ledblink.lst) TABS(2) OBJECT(.\Objects\ledblink.obj)
+
+line level    source
+
+   1          //LED blinking
+   2          
+   3          
+   4          // PATTERN 1- ALL LEDs ON/OFF
+   5          
+   6          #include <reg51.h>
+   7          
+   8          void delay(unsigned int time)
+   9          {
+  10   1          unsigned int i, j;
+  11   1          for(i = 0; i < time; i++)       
+  12   1          {
+  13   2              for(j = 0; j<40000; j++);  
+  14   2          }
+  15   1      }
+  16          
+  17          
+  18          void main()
+  19          {
+  20   1          while(1){
+  21   2            P0 = 0xFF;  
+  22   2           delay(1);  
+  23   2           P0 = 0x00;  
+  24   2            delay(1);
+  25   2          }
+  26   1      }
+  27          
+  28          
+  29          /*
+  30          // PATTERN 2- ALTERNATE LEDs ON/OFF
+  31          
+  32          #include<reg51.h> void delay
+  33          (unsigned int time)
+  34          {
+  35          unsigned int i ; for(i=0 ;
+  36          i<time ; i++);
+  37          }
+  38          void main()
+  39          { while(1)
+  40          {
+  41          
+  42          P0 = 0x55 ; // EVEN LEDs ON
+  43          delay(20000) ; 
+  44          P0 =0xAA ; //ODD LEDs ON 
+  45            delay(20000);
+  46          }
+  47          }
+  48          
+  49          //PATTERN 3- UPPER NIBBLE-LOWER NIBBLE LEDs ON/OFF
+  50          
+  51          #include<reg51.h> void delay
+  52          (unsigned int time)
+  53          { unsigned int i ; for(i=0 ;
+  54          i<time ; i++);
+C51 COMPILER V9.59.0.0   LEDBLINK                                                          08/11/2025 15:37:20 PAGE 2   
+
+  55          
+  56          }
+  57          void main()
+  58          { while(1)
+  59          {
+  60          P0 = 0xF0 ;  //UPPER NIBBLE ON
+  61          delay(20000) ; // FOR TIME DELAY 
+  62            P0 =0x0F ;  //FOR LOWER NIBBLE ON 
+  63            delay(20000);
+  64          }
+  65          
+  66          
+  67          
+  68          // INCREASING COUNT FROM 00-FF
+  69          #include <reg51.h>
+  70          
+  71          void delay(unsigned int t) {
+  72              unsigned int i;
+  73              for (i = 0; i < t; i++);
+  74          }
+  75          
+  76          void main() {
+  77              int i;
+  78              for (i = 0x00; i <= 0xFF; i++) {
+  79                  P0 = i;
+  80                  delay(50000); 
+  81              }
+  82          }
+  83          
+  84          */
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     77    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----       4
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
