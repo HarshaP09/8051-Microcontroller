@@ -1,0 +1,260 @@
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    08/14/2025  15:30:53  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\STARTUP.obj, .\Objects\eeprom.obj TO .\Objects\eeprom PRINT (.\Listings\eeprom.m51
+>> ) RAMSIZE (256)
+
+
+MEMORY MODEL: SMALL
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\STARTUP.obj (?C_STARTUP)
+  .\Objects\eeprom.obj (EEPROM)
+
+
+LINK MAP OF MODULE:  .\Objects\eeprom (?C_STARTUP)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+            DATA    0008H     0003H     UNIT         _DATA_GROUP_
+                    000BH     0015H                  *** GAP ***
+            BIT     0020H.0   0000H.1   UNIT         _BIT_GROUP_
+                    0020H.1   0000H.7                *** GAP ***
+            IDATA   0021H     0001H     UNIT         ?STACK
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0003H     ABSOLUTE     
+                    0003H     07FDH                  *** GAP ***
+            CODE    0800H     003CH     UNIT         ?PR?I2C_READ?EEPROM
+            CODE    083CH     0032H     UNIT         ?PR?_I2C_WRITE?EEPROM
+            CODE    086EH     0028H     UNIT         ?PR?_DELAY?EEPROM
+            CODE    0896H     0024H     UNIT         ?PR?_EEPROM_READ?EEPROM
+            CODE    08BAH     0020H     UNIT         ?PR?_EEPROM_WRITE?EEPROM
+            CODE    08DAH     0012H     UNIT         ?PR?MAIN?EEPROM
+            CODE    08ECH     000CH     UNIT         ?C_C51STARTUP
+            CODE    08F8H     000BH     UNIT         ?PR?I2C_START?EEPROM
+            CODE    0903H     000AH     UNIT         ?PR?I2C_STOP?EEPROM
+
+
+
+OVERLAY MAP OF MODULE:   .\Objects\eeprom (?C_STARTUP)
+
+
+SEGMENT                             BIT_GROUP          DATA_GROUP 
+  +--> CALLED SEGMENT            START    LENGTH     START    LENGTH
+--------------------------------------------------------------------
+?C_C51STARTUP                    -----    -----      -----    -----
+  +--> ?PR?MAIN?EEPROM
+
+?PR?MAIN?EEPROM                  -----    -----      -----    -----
+  +--> ?PR?_EEPROM_WRITE?EEPROM
+  +--> ?PR?_EEPROM_READ?EEPROM
+
+?PR?_EEPROM_WRITE?EEPROM         -----    -----      0008H    0002H
+  +--> ?PR?I2C_START?EEPROM
+  +--> ?PR?_I2C_WRITE?EEPROM
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/14/2025  15:30:53  PAGE 2
+
+
+  +--> ?PR?I2C_STOP?EEPROM
+  +--> ?PR?_DELAY?EEPROM
+
+?PR?I2C_START?EEPROM             -----    -----      -----    -----
+  +--> ?PR?_DELAY?EEPROM
+
+?PR?_I2C_WRITE?EEPROM            0020H.0  0000H.1    000AH    0001H
+  +--> ?PR?_DELAY?EEPROM
+
+?PR?I2C_STOP?EEPROM              -----    -----      -----    -----
+  +--> ?PR?_DELAY?EEPROM
+
+?PR?_EEPROM_READ?EEPROM          -----    -----      0008H    0001H
+  +--> ?PR?I2C_START?EEPROM
+  +--> ?PR?_I2C_WRITE?EEPROM
+  +--> ?PR?I2C_READ?EEPROM
+  +--> ?PR?I2C_STOP?EEPROM
+
+?PR?I2C_READ?EEPROM              0020H.0  0000H.1    0009H    0001H
+  +--> ?PR?_DELAY?EEPROM
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\eeprom (?C_STARTUP)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        ?C_STARTUP
+  C:08ECH         SEGMENT       ?C_C51STARTUP
+  I:0021H         SEGMENT       ?STACK
+  C:0000H         PUBLIC        ?C_STARTUP
+  D:00E0H         SYMBOL        ACC
+  D:00F0H         SYMBOL        B
+  D:0083H         SYMBOL        DPH
+  D:0082H         SYMBOL        DPL
+  N:0000H         SYMBOL        IBPSTACK
+  N:0100H         SYMBOL        IBPSTACKTOP
+  N:0080H         SYMBOL        IDATALEN
+  C:08EFH         SYMBOL        IDATALOOP
+  N:0000H         SYMBOL        PBPSTACK
+  N:0100H         SYMBOL        PBPSTACKTOP
+  N:0000H         SYMBOL        PDATALEN
+  N:0000H         SYMBOL        PDATASTART
+  N:0000H         SYMBOL        PPAGE
+  N:0000H         SYMBOL        PPAGEENABLE
+  D:00A0H         SYMBOL        PPAGE_SFR
+  D:0081H         SYMBOL        SP
+  C:08ECH         SYMBOL        STARTUP1
+  N:0000H         SYMBOL        XBPSTACK
+  N:0000H         SYMBOL        XBPSTACKTOP
+  N:0000H         SYMBOL        XDATALEN
+  N:0000H         SYMBOL        XDATASTART
+  C:0000H         LINE#         126
+  C:08ECH         LINE#         133
+  C:08EEH         LINE#         134
+  C:08EFH         LINE#         135
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/14/2025  15:30:53  PAGE 3
+
+
+  C:08F0H         LINE#         136
+  C:08F2H         LINE#         185
+  C:08F5H         LINE#         196
+  -------         ENDMOD        ?C_STARTUP
+
+  -------         MODULE        EEPROM
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:0090H         PUBLIC        P1
+  D:00A0H         PUBLIC        P2
+  C:0876H         PUBLIC        _delay
+  C:0800H         PUBLIC        I2C_Read
+  C:08DAH         PUBLIC        main
+  C:0896H         PUBLIC        _EEPROM_Read
+  C:083CH         PUBLIC        _I2C_Write
+  C:08F8H         PUBLIC        I2C_Start
+  C:08BAH         PUBLIC        _EEPROM_Write
+  C:0903H         PUBLIC        I2C_Stop
+  B:00A0H.3       PUBLIC        SDA
+  B:00A0H.2       PUBLIC        SCL
+  C:0870H         SYMBOL        L?0030
+  -------         PROC          L?0029
+  -------         ENDPROC       L?0029
+  C:0870H         SYMBOL        L?0030
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        t
+  -------         DO            
+  D:0004H         SYMBOL        i
+  D:0002H         SYMBOL        j
+  -------         ENDDO         
+  C:0876H         LINE#         6
+  C:0876H         LINE#         8
+  C:0880H         LINE#         9
+  C:0895H         LINE#         10
+  -------         ENDPROC       _DELAY
+  -------         PROC          I2C_START
+  C:08F8H         LINE#         12
+  C:08F8H         LINE#         13
+  C:08FBH         LINE#         14
+  C:0900H         LINE#         15
+  C:0902H         LINE#         16
+  -------         ENDPROC       I2C_START
+  -------         PROC          I2C_STOP
+  C:0903H         LINE#         18
+  C:0903H         LINE#         19
+  C:0908H         LINE#         20
+  -------         ENDPROC       I2C_STOP
+  -------         PROC          _I2C_WRITE
+  D:000AH         SYMBOL        dat
+  -------         DO            
+  D:0001H         SYMBOL        i
+  B:0020H.0       SYMBOL        ack
+  -------         ENDDO         
+  C:083CH         LINE#         23
+  C:083EH         LINE#         26
+  C:084AH         LINE#         27
+  C:0854H         LINE#         28
+  C:0859H         LINE#         29
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/14/2025  15:30:53  PAGE 4
+
+
+  C:085FH         LINE#         30
+  C:0862H         LINE#         31
+  C:0865H         LINE#         32
+  C:0869H         LINE#         33
+  C:086BH         LINE#         34
+  C:086DH         LINE#         35
+  -------         ENDPROC       _I2C_WRITE
+  -------         PROC          I2C_READ
+  B:0020H.0       SYMBOL        ack
+  -------         DO            
+  D:0001H         SYMBOL        i
+  D:0009H         SYMBOL        dat
+  -------         ENDDO         
+  C:0800H         LINE#         37
+  C:0800H         LINE#         38
+  C:0803H         LINE#         39
+  C:0805H         LINE#         40
+  C:0810H         LINE#         41
+  C:0813H         LINE#         42
+  C:081FH         LINE#         43
+  C:0826H         LINE#         44
+  C:0829H         LINE#         45
+  C:0832H         LINE#         46
+  C:0837H         LINE#         47
+  C:0839H         LINE#         48
+  C:083BH         LINE#         49
+  -------         ENDPROC       I2C_READ
+  -------         PROC          _EEPROM_WRITE
+  D:0008H         SYMBOL        addr
+  D:0009H         SYMBOL        dat
+  C:08BAH         LINE#         51
+  C:08BEH         LINE#         52
+  C:08C1H         LINE#         53
+  C:08C6H         LINE#         54
+  C:08CBH         LINE#         55
+  C:08D0H         LINE#         56
+  C:08D3H         LINE#         57
+  -------         ENDPROC       _EEPROM_WRITE
+  -------         PROC          _EEPROM_READ
+  D:0008H         SYMBOL        addr
+  -------         DO            
+  D:0001H         SYMBOL        dat
+  -------         ENDDO         
+  C:0896H         LINE#         60
+  C:0898H         LINE#         62
+  C:089BH         LINE#         63
+  C:08A0H         LINE#         64
+  C:08A5H         LINE#         65
+  C:08A8H         LINE#         66
+  C:08ADH         LINE#         67
+  C:08B4H         LINE#         68
+  C:08B7H         LINE#         69
+  C:08B9H         LINE#         70
+  -------         ENDPROC       _EEPROM_READ
+  -------         PROC          MAIN
+  -------         DO            
+  D:0007H         SYMBOL        value
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  08/14/2025  15:30:53  PAGE 5
+
+
+  -------         ENDDO         
+  C:08DAH         LINE#         72
+  C:08DAH         LINE#         74
+  C:08DDH         LINE#         76
+  C:08E3H         LINE#         77
+  C:08E8H         LINE#         79
+  C:08EAH         LINE#         81
+  -------         ENDPROC       MAIN
+  -------         ENDMOD        EEPROM
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0110H BYTE (13%) *
+******************************************************************************
+
+Program Size: data=12.1 xdata=0 code=272
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

@@ -1,0 +1,4 @@
+".\Objects\STARTUP.obj",
+".\Objects\eeprom.obj" 
+TO ".\Objects\eeprom" 
+PRINT(".\Listings\eeprom.m51") RAMSIZE(256) 
