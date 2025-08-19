@@ -1,4 +1,4 @@
-C51 COMPILER V9.59.0.0   LCD                                                               08/11/2025 15:51:37 PAGE 1   
+C51 COMPILER V9.59.0.0   LCD                                                               08/18/2025 16:00:39 PAGE 1   
 
 
 C51 COMPILER V9.59.0.0, COMPILATION OF MODULE LCD
@@ -62,7 +62,7 @@ line level    source
   52   2          keypad &= ~(1 << row);
   53   2          delay(1);
   54   2          for(col = 0; col < 4; col++) {
-C51 COMPILER V9.59.0.0   LCD                                                               08/11/2025 15:51:37 PAGE 2   
+C51 COMPILER V9.59.0.0   LCD                                                               08/18/2025 16:00:39 PAGE 2   
 
   55   3            if(!(keypad & (1 << (4 + col)))) {
   56   4              delay(20);
