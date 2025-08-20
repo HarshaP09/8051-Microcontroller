@@ -17,7 +17,7 @@ A relay is an electromechanical switch that allows the microcontroller to contro
 ---
 
 ## Theory – Relay Interfacing
-* A relay works like an electrically operated switch.  
+* A relay is an electromechanical switch used to control high-voltage or high-current circuits with a low-power signal from a microcontroller. It consists of a coil, armature, spring, and contacts. When current flows through the coil, it creates a magnetic field that pulls the armature, changing the contact position and switching the circuit ON or OFF. 
 * The 8051 cannot directly drive high-voltage appliances, so a relay is used as an interface.  
 * A push button provides user input:  
   * Each press toggles the relay **ON or OFF**.  
