@@ -15,12 +15,11 @@ The output data is displayed on Port 1 LEDs.
 ---
 
 ## Theory – I²C and EEPROM
-* **I²C (Inter-Integrated Circuit)** is a two-wire communication protocol consisting of:
-  * **SCL (Clock)** – Synchronizes communication  
-  * **SDA (Data)** – Transfers serial data  
+* **I²C (Inter-Integrated Circuit)**  
+  The I²C (Inter-Integrated Circuit) protocol is a two-wire communication standard that uses a Serial Data Line (SDA) and a Serial Clock Line (SCL). It allows multiple devices (masters and slaves) to communicate using unique addresses, with data transferred serially in a synchronized manner. It is widely used to connect peripherals like EEPROMs, RTCs, and sensors with microcontrollers.  
 
  * **EEPROM (Electrically Erasable Programmable Read-Only Memory):**  
-   * Non-volatile memory used for permanent data storage. Supports byte-level read/write operations.  
+ The EEPROM (Electrically Erasable Programmable Read-Only Memory) is a non-volatile memory chip that stores data even when power is off. Data can be electrically erased and reprogrammed byte by byte, making it useful for storing small amounts of data like configurations, calibration values, or logs in embedded systems..  
 * In this project:
     * EEPROM_Write(address, data) → Stores a byte at the specified EEPROM address  
     * EEPROM_Read(address) → Retrieves the stored byte  
