@@ -31,11 +31,12 @@ The user can start/stop the motor, change direction (forward/reverse), and adjus
 
 ## Theory
 
-* **Stepper Motor**:  
-  * A stepper motor moves in discrete steps. Each coil must be energized in a specific sequence to rotate the motor.  
+* **Stepper Motor**:
+  * A stepper motor is constructed with a stator containing multiple electromagnet coils arranged in phases and a rotor that can be a permanent magnet, soft iron, or a hybrid combination. When the stator windings are energized in sequence, the rotor aligns step by step with the magnetic poles. The precise alignment between the stator and rotor teeth allows the motor to move in accurate angular steps.
+A stepper motor moves in discrete steps. Each coil must be energized in a specific sequence to rotate the motor.  
   * **Forward sequence**: IN1 → IN2 → IN3 → IN4  
   * **Reverse sequence**: IN4 → IN3 → IN2 → IN1  
-  * By adjusting the delay between steps, the motor’s speed can be controlled.  
+ By adjusting the delay between steps, the motor’s speed can be controlled.  
 
 * **Switch Control**:  
   The switches allow the user to start, stop, change direction, and control speed dynamically while the motor runs.  
