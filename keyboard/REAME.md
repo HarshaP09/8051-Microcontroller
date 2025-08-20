@@ -25,8 +25,7 @@ When a key is pressed on the keypad, the corresponding hexadecimal digit (0–F)
 ## Theory
 
 * **Matrix Keypad (4x4):**  
-  A keypad has 4 rows and 4 columns. When a key is pressed, a row and column short together.  
-  By scanning rows and reading columns, the specific key pressed can be identified.
+A 4×4 keypad is a matrix-type input device that consists of 16 keys arranged in four rows and four columns. The keypad works on the principle of row and column scanning. The microcontroller sequentially activates one row at a time while keeping the others inactive and simultaneously monitors the column lines. When a key is pressed, it creates an electrical connection between a specific row and column, allowing the microcontroller to identify the exact key based on the active row and detected column.
 
 * **7-Segment Display:**  
   Each digit/character is represented by activating specific LEDs in the 7-segment module.  
