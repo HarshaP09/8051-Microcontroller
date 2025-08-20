@@ -26,10 +26,9 @@ This project demonstrates how to interface a DS1307 RTC (Real Time Clock) with t
 ## Theory
 
 ### Real Time Clock (RTC - DS1307)
-* RTCs are specialized ICs that keep track of time (HH:MM:SS) and date (DD/MM/YY) 
-* They use the I²C protocol for communication with microcontrollers  
-* The DS1307 stores time in BCD (Binary-Coded Decimal) format  
 
+* The DS1307 is a real-time clock (RTC) integrated circuit that keeps accurate track of time in terms of seconds, minutes, hours, day, date, month, and year, including leap-year adjustments. It communicates with microcontrollers through the I²C protocol using just two lines, SDA and SCL. The IC requires an external 32.768 kHz crystal oscillator to maintain precise timing and is supported by a backup battery (commonly a 3V coin cell), allowing it to continue timekeeping even when the main system power is off. 
+* It also includes 56 bytes of non-volatile RAM for general-purpose data storage. The DS1307 operates on a 5V supply and outputs time values in binary-coded decimal (BCD) format, making it easy for microcontrollers to process.
 ---
 
 ## Expected Output
