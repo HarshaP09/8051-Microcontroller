@@ -8,10 +8,10 @@ It helps in understanding digital display driving, lookup tables, and GPIO-based
 
 ## Circuit Connections
 * Port P2* Connected to 7-segment display segments (a–g + DP)  
-* P0.0 to dis1** (Digit Select 1)  
-* P0.1 to dis2** (Digit Select 2)  
-* P0.2 to dis3** (Digit Select 3)  
-* P0.3 to dis4** (Digit Select 4)  
+* P0.0 to dis1 (Digit Select 1)  
+* P0.1 to dis2 (Digit Select 2)  
+* P0.2 to dis3 (Digit Select 3)  
+* P0.3 to dis4 (Digit Select 4)  
 
 In this setup, all digit select lines are enabled together, so the same digit appears on all displays.  
 
