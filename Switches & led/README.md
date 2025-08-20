@@ -34,7 +34,7 @@ When a switch is pressed, the corresponding LED turns ON; otherwise, the LED rem
 
 
 
-\## 🔹Theory – Switch \& LED Interfacing
+\## Theory – Switch \& LED Interfacing
 
 \- \*\*Switches:\*\* Act as digital inputs (logic HIGH = not pressed, logic LOW = pressed).  
 
@@ -48,7 +48,7 @@ When a switch is pressed, the corresponding LED turns ON; otherwise, the LED rem
 
 
 
-\## 🔹 Expected Output
+\## Expected Output
 
 1\. All LEDs remain OFF when no switches are pressed.  
 
