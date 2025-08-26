@@ -22,13 +22,16 @@ Each project folder contains:
 7. **Relay** — This turns on/off the relay when button is pressed.
 8. **DAC** - This contains various types of waveforms which is then seen using a CRO.
 9. **Switches and LEDs** - Turns on a LED when corresponding switch is pressed.
-10. **4*4 Keyboard** - Pressed key is displayed on 7-segment display 
+10. **4*4 Keyboard** - Pressed key is displayed on 7-segment display
+11. **EEPROM** - Writing and Reading of the data.
+12.  **Real Time Clock** - Real time is displayed on LCD. 
 
 ## Tools Used
 - Keil uVision (development & build)
 - Progisp-172 (programming)
 - Proteus / Multisim (optional simulation)
-- Embedded C 
+- Embedded C
+- External Peripherals 
 
 ## How to Use
 1. Clone or download this repository.
